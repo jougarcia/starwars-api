@@ -83,7 +83,7 @@ def post_fav_planet(user_param, planet_id):
     db.session.add(newFavPlanet)
     db.session.commit()
 
-    return jsonify({"resp":"Todo creado con exito"}), 201
+    return jsonify({"resp":"exito"}), 201
 
 @api.route('/users/<int:user_param>/favorite/people/<int:people_index>', methods=['POST'])
 def post_fav_people(user_param, people_index):
@@ -91,7 +91,7 @@ def post_fav_people(user_param, people_index):
     db.session.add(newFavPeople)
     db.session.commit()
 
-    return jsonify({"resp":"Todo creado con exito"}), 201
+    return jsonify({"resp":"exito"}), 201
 
 @api.route('/users/<int:user_param>/favorite/planet/<int:planet_id>', methods=['DELETE'])
 def delete_planet(user_param, planet_id):
@@ -99,7 +99,7 @@ def delete_planet(user_param, planet_id):
     fav_planet_delete = users_fav_planets[0]
     db.session.delete(fav_planet_delete)
     db.session.commit()
-    return jsonify({"resp":"Todo eliminado con exito"}), 200
+    return jsonify({"resp":"eliminado con exito"}), 200
 
 @api.route('/users/<int:user_param>/favorite/people/<int:pple_id>', methods=['DELETE'])
 def delete_people(user_param, pple_id):
@@ -107,4 +107,4 @@ def delete_people(user_param, pple_id):
     fav_people_delete = users_fav_people[0]
     db.session.delete(fav_people_delete)
     db.session.commit()
-    return jsonify({"resp":"Todo eliminado con exito"}), 200
+    return jsonify({"resp":"eliminado con exito"}), 200
